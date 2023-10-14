@@ -1,0 +1,6 @@
+[submodule "shopping-list-backend"]
+	path = shopping-list-backend
+	url = https://github.com/BilkaDev/shopping-list-backend.git
+[submodule "shopping-list-frontend"]
+	path = shopping-list-frontend
+	url = https://github.com/BilkaDev/shopping-list-frontend.git
