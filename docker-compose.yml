@@ -23,8 +23,11 @@ services:
       DB_USERNAME: root
       DB_DATABASE: db_shopping-list
       DB_PASSWORD: password
+      FE_DOMAIN: localhost
+      FE_SSL: false
+      FE_CORS_ORIGIN: http://localhost:3000
     ports:
-      - "3000:3000"
+      - "3002:3002"
     volumes:
       - ./shopping-list-backend:/app 
       - /app/node_modules
@@ -33,5 +36,20 @@ services:
     networks:
       - default
       
+  frontend:
+    build:
+      context: ./shopping-list-frontend
+      dockerfile: Dockerfile
+    environment:
+      REACT_APP_API_URL: http://localhost:3002/api
+      WATCHPACK_POLLING: "true"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./shopping-list-frontend:/app 
+      - /app/node_modules
+    depends_on:
+      - backend
+
 networks:
   default:
