@@ -11,6 +11,8 @@ services:
       MARIADB_DATABASE: db_shopping-list
     networks:
       - default
+    volumes:
+      - shopping-list_db:/var/lib/mysql
       
   backend:
     build:
@@ -30,7 +32,7 @@ services:
       - "3002:3002"
     volumes:
       - ./shopping-list-backend:/app 
-      - /app/node_modules
+      - shopping-list_be:/app/node_modules
     depends_on:
       - db
     networks:
@@ -47,9 +49,14 @@ services:
       - "3000:3000"
     volumes:
       - ./shopping-list-frontend:/app 
-      - /app/node_modules
+      - shopping-list_fe:/app/node_modules
     depends_on:
       - backend
-
+volumes:
+  shopping-list_fe:
+  shopping-list_be:
+  shopping-list_db:
+    driver: local
 networks:
   default:
+  
