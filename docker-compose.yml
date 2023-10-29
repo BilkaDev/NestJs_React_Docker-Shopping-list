@@ -48,12 +48,13 @@ services:
       context: ./shopping-list-frontend
       dockerfile: Dockerfile
     environment:
-      REACT_APP_API_URL: http://localhost:3002/api
-      WATCHPACK_POLLING: "true"
+      VITE_REACT_APP_API_URL: http://localhost:3002/api
+      # WATCHPACK_POLLING: "true" # use it for 
     ports:
       - "3000:3000"
     volumes:
       - ./shopping-list-frontend:/app 
+      - /app/node_modules
       - shopping-list_fe:/app/node_modules
     depends_on:
       - backend
