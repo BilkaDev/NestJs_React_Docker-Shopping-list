@@ -28,6 +28,11 @@ services:
       FE_DOMAIN: localhost
       FE_SSL: false
       FE_CORS_ORIGIN: http://localhost:3000
+      MAIL_USER: "user"
+      MAIL_PWD: "pwd"
+      MAIL_HOST: mailslurper
+      MAIL_PORT: 2500
+      
     ports:
       - "3002:3002"
     volumes:
@@ -52,6 +57,13 @@ services:
       - shopping-list_fe:/app/node_modules
     depends_on:
       - backend
+  
+  mailslurper:
+    image: marcopas/docker-mailslurper
+    ports:
+      - "2500:2500"
+      - "9000:8080"
+      - "8085:8085"
 volumes:
   shopping-list_fe:
   shopping-list_be:
