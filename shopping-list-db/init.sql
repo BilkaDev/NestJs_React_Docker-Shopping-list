@@ -31,7 +31,9 @@ CREATE TABLE IF NOT EXISTS `basket` (
   CONSTRAINT `FK_afc4d466868eef539f9c678cb6d` FOREIGN KEY (`listId`) REFERENCES `list` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Zrzucanie danych dla tabeli db_shopping-list.basket: ~0 rows (około)
+-- Zrzucanie danych dla tabeli db_shopping-list.basket: ~1 rows (około)
+INSERT INTO `basket` (`id`, `listId`, `itemId`) VALUES
+	('dc1aab81-acc8-4402-a4a2-9196049817af', '1e78a706-95f0-4366-acf0-1bf92cbcc83d', '2e97b5ab-0e94-47a2-9fb2-8734ed96aec8');
 
 -- Zrzut struktury tabela db_shopping-list.item_in_list
 CREATE TABLE IF NOT EXISTS `item_in_list` (
@@ -82,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `list_recipes_recipe` (
   CONSTRAINT `FK_e98ccd1f40b328f9a3d8e714792` FOREIGN KEY (`listId`) REFERENCES `list` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Zrzucanie danych dla tabeli db_shopping-list.list_recipes_recipe: ~1 rows (około)
+-- Zrzucanie danych dla tabeli db_shopping-list.list_recipes_recipe: ~0 rows (około)
 INSERT INTO `list_recipes_recipe` (`listId`, `recipeId`) VALUES
 	('1e78a706-95f0-4366-acf0-1bf92cbcc83d', '83a8932a-91ff-4920-9e6d-41b2df86d3a9');
 
@@ -97,13 +99,10 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `FK_329b8ae12068b23da547d3b4798` FOREIGN KEY (`userId`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Zrzucanie danych dla tabeli db_shopping-list.product: ~6 rows (około)
+-- Zrzucanie danych dla tabeli db_shopping-list.product: ~3 rows (około)
 INSERT INTO `product` (`id`, `category`, `userId`, `name`) VALUES
 	('02bbe9c9-0d65-4aa8-a0c1-ce13c9f37b7b', 2, 'b0a53514-d0e7-426f-a3bf-7531751e21c0', 'Szynka'),
-	('1dd0fc45-4f99-42a8-94a9-edb2606f7b98', 1, 'b0a53514-d0e7-426f-a3bf-7531751e21c0', ''),
-	('75723c6c-eb3b-4855-bce2-af709d05b536', 4, 'b0a53514-d0e7-426f-a3bf-7531751e21c0', ''),
 	('c768350a-9cb6-4677-b114-b334067e73b9', 0, 'b0a53514-d0e7-426f-a3bf-7531751e21c0', 'Jajka'),
-	('fc4a407d-b274-40fa-b219-35ca089e35cf', 0, 'b0a53514-d0e7-426f-a3bf-7531751e21c0', ''),
 	('fdb6e10b-10f3-4160-813a-cda07231709c', 4, 'b0a53514-d0e7-426f-a3bf-7531751e21c0', 'Mleko');
 
 -- Zrzut struktury tabela db_shopping-list.recipe
@@ -133,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- Zrzucanie danych dla tabeli db_shopping-list.user: ~2 rows (około)
 INSERT INTO `user` (`id`, `email`, `pwdHash`, `currentTokenId`, `photoFn`) VALUES
-	('b0a53514-d0e7-426f-a3bf-7531751e21c0', 'test@example.com', '4346eed79e5e6e9ac2f3566aab0d31d6d198daa98d060dbabd587d1d0801e270ab7e2cdc4db6ad90ee0c6b274a6b6ce284b0cc013d32bf14dae125ee95b140d8', 'd14b9c72-0dfc-4fd6-87e6-98f9615da792', '2c59b48d-c42e-42bc-badf-2e2fcef9d63f.jpeg'),
+	('b0a53514-d0e7-426f-a3bf-7531751e21c0', 'test@example.com', '4346eed79e5e6e9ac2f3566aab0d31d6d198daa98d060dbabd587d1d0801e270ab7e2cdc4db6ad90ee0c6b274a6b6ce284b0cc013d32bf14dae125ee95b140d8', '1f2bd098-9055-4966-8972-1ec428910df4', '2c59b48d-c42e-42bc-badf-2e2fcef9d63f.jpeg'),
 	('f23c220d-dfba-4183-a3d9-10745a2557dd', 'test123@gmail.com', '$argon2id$v=19$m=65536,t=3,p=4$+7a6FoaF1k9iywfMd6KjqQ$MXH0V+uBeQ4JVNjZrJy68y+Y5cFxNpVvpnUXbf9uFx8', '94a2d006-8172-4016-8eba-0c19f7c61ece', NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
