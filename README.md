@@ -17,37 +17,12 @@ git submodule update
 
 docker-compose up -d
 ```
-    
-## Demo
-
-Login
-
-img
-
-Product list is used to add the products we will be adding to the list
-
-img
-
-Shopping list
-
-img
-
-
-Recipe list
-
-img
-
-Chnage avatar
-
-img
-
 
 ## Tech Stack
 
 **Client:** React, TS, Redux, ChakraUi, Vite
 
 **Server:** Node, NestJs, TS
-
 
 ## Environment Variables
 
@@ -78,3 +53,35 @@ To run this project, you will need to add the following environment variables to
 
 **Frontend**
 `VITE_REACT_APP_API_URL: http://localhost:3002/api  # addres to BE`
+
+    
+## Demo
+
+### Login
+
+![login screen](https://github.com/BilkaDev/NestJs_React_Docker-Shopping-list/blob/main/docs/login.png)
+
+
+### Product list 
+Is used to add the products we will be adding to the list.
+
+![product list](https://github.com/BilkaDev/NestJs_React_Docker-Shopping-list/blob/main/docs/product-list.png)
+
+### Shopping list
+Is used to manage shopping list.
+
+![shopping list](https://github.com/BilkaDev/NestJs_React_Docker-Shopping-list/blob/main/docs/shopping-list.png)
+
+
+### Recipe list
+Is used to manage recipe.
+
+![recipe list](https://github.com/BilkaDev/NestJs_React_Docker-Shopping-list/blob/main/docs/recipe-list.png)
+
+
+### Chnage avatar
+Is used to change avatar image.
+
+![change avatar](https://github.com/BilkaDev/NestJs_React_Docker-Shopping-list/blob/main/docs/change-avatar.png)
+
+
