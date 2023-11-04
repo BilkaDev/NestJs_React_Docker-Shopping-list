@@ -55,7 +55,6 @@ services:
     volumes:
       - ./shopping-list-frontend:/app 
       - /app/node_modules
-      - shopping-list_fe:/app/node_modules
     depends_on:
       - backend
   
