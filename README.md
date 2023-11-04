@@ -17,6 +17,16 @@ git submodule update
 
 docker-compose up -d
 ```
+### Now you can open:
+
+**Frontend** `http://localhost:3000`
+
+**Backend** ` http://localhost:3002/api`
+
+**Database** `host: localhost, port:3306, user:root, password:password`
+
+**Mailslurper** ` http://localhost:9000`
+
 
 ## Tech Stack
 
